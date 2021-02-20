@@ -1,7 +1,8 @@
+@charset "UTF-8";
 /*!
 Theme Name: theme-4w4
 Theme URI: http://underscores.me/
-Author: Alexandre Vanier
+Author: Émile Parent Corriveau
 Author URI: http://underscores.me/
 Description: Description
 Version: 1.0.0
@@ -537,6 +538,46 @@ a:hover, a:active {
   outline: 0;
 }
 
+.main-navigation a {
+  color: #000;
+}
+
+.main-navigation a:visited {
+  color: #000;
+}
+
+.main-navigation a:hover, .main-navigation a:focus, .main-navigation a:active {
+  color: #191970;
+}
+
+.main-navigation a:focus {
+  outline: thin dotted;
+}
+
+.main-navigation a:hover, .main-navigation a:active {
+  outline: 0;
+}
+
+.site-title a {
+  color: #ffffff;
+}
+
+.site-title a:visited {
+  color: #868686;
+}
+
+.site-title a:hover, .site-title a:focus, .site-title a:active {
+  color: #191970;
+}
+
+.site-title a:focus {
+  outline: thin dotted;
+}
+
+.site-title a:hover, .site-title a:active {
+  outline: 0;
+}
+
 /* Forms
 --------------------------------------------- */
 button,
@@ -632,7 +673,6 @@ textarea {
 }
 
 .main-navigation ul {
-  display: none;
   list-style: none;
   margin: 0;
   padding-left: 0;
@@ -682,7 +722,7 @@ textarea {
   display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media (min-width: 800px) {
   .menu-toggle {
     display: none;
   }
@@ -714,6 +754,28 @@ textarea {
 .post-navigation .nav-next {
   text-align: end;
   flex: 1 0 50%;
+}
+
+/* -------------------------------------
+			Bouton Burger
+---------------------------------------*/
+.main-navigation {
+  display: block;
+  width: 100%;
+}
+
+.main-navigation ul {
+  display: none;
+  list-style: none;
+  margin: 0;
+  top: 100%;
+  z-index: 9999;
+}
+
+@media (min-width: 800px) {
+  .main-navigation ul {
+    display: flex;
+  }
 }
 
 /* Posts and pages
@@ -943,26 +1005,29 @@ body {
 }
 
 body.home {
-  background-color: #28bee4;
+  background-color: #fff;
+  height: 100vh;
+  width: 100vw;
 }
 
 body.home::after {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 135vh;
   content: '';
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: -1;
-  clip-path: polygon(100% 66%, 72% 100%, 100% 100%);
-  background-color: #fff;
+  clip-path: ellipse(100% 11% at 50% 100%);
+  background-color: #000;
 }
 
 @media (min-width: 800px) {
   body.home::after {
-    clip-path: polygon(89% 0, 100% 0, 100% 100%, 64% 100%);
+    clip-path: ellipse(15% 100% at 100% 50%);
+    height: 110vh;
   }
 }
 
@@ -970,22 +1035,50 @@ body.home::after {
   margin: 0 2rem 0 2rem;
 }
 
+#post-11 {
+  margin: 0;
+}
+
 .site-title {
-  font-size: clamp(0.9rem, -0.875rem + 8.333vw, 4rem);
-  margin-bottom: 0;
+  font-family: "montserra", monospace;
+  font-weight: bold;
+  font-size: clamp(3rem, -0.875rem + 8.333vw, 7rem);
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 .site-title a {
   text-decoration: none;
-  font-weight: bold;
 }
 
 .site-description {
-  font-size: clamp(0.9rem, -0.875rem + 8.333vw, 4rem);
-  margin-bottom: 0;
+  font-size: clamp(1.4rem, -1.2rem + 8.333vw, 3rem);
+  font-family: "montserra", monospace;
+  font-weight: normal;
+  margin: 0;
 }
 
-.accueil {
-  font-size: 2rem;
+.menu ul {
+  list-style-type: none;
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 800px) {
+  .menu ul {
+    display: flex;
+    justify-content: space-between;
+    max-width: 670px;
+  }
+}
+
+.wp-block-column ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 200px;
+  height: 70%;
+  font-size: 1.5rem;
 }
 /*# sourceMappingURL=style.css.map */
